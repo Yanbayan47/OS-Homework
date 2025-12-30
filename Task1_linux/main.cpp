@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "C:\Yan\OS homework\Task1\Vector\vector.h"
-#include "C:\Yan\OS homework\Task1\Number\number.h"
+#include "Vector/vector.h"
+#include "Number/number.h"
 
 void printNumber(const char* label, const Number& num) {
     printf("%s%.2f\n", label, num.getValue());
