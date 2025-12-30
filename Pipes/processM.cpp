@@ -3,7 +3,7 @@
 int main() {
     int x;
     while (std::cin >> x) {
-        std::cout << (x * 7) << " ";
+        std::cout << (x * 7) << " " << std::flush; 
     }
     return 0;
 }
