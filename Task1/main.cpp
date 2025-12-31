@@ -55,7 +55,7 @@ int main() {
     printVector("VECTOR_ONE = ", VECTOR_ONE);
     
     printf("\n");
-    
+
     // 4. Показываем, что Vector использует Number
     printf("4. Demonstrating the dependence of Vector on Number:\n");
     Vector v4(a, b); // Используем Number объекты
