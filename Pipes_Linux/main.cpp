@@ -9,6 +9,7 @@ bool StartProcess(const std::string& appName, int hStdIn, int hStdOut, pid_t& pi
     pid = fork();
     
     if (pid == 0) { 
+        // Дочерний процесс
         if (hStdIn != STDIN_FILENO) {
             dup2(hStdIn, STDIN_FILENO);
             close(hStdIn);
@@ -18,6 +19,11 @@ bool StartProcess(const std::string& appName, int hStdIn, int hStdOut, pid_t& pi
             close(hStdOut);
         }
         
+        int maxFd = sysconf(_SC_OPEN_MAX);
+        for (int i = 3; i < maxFd; ++i) {
+            close(i);
+        }
+
         // Запуск
         execl(appName.c_str(), appName.c_str(), (char*)NULL);
         
